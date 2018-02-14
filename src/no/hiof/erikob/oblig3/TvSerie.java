@@ -4,17 +4,21 @@ package no.hiof.erikob.oblig3;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class TvSerie extends Produksjon {
+public class TvSerie {
+    private String tittel;
+    private String beskrivelse;
     private ArrayList<Episode> episodeListe = new ArrayList<>();
     private int gjennomSnittligSpilletid;
     private int antallSesonger;
+    private LocalDate utgivelsesdato;
 
     public TvSerie(String tittel, String beskrivelse, LocalDate utgivelsesdato) {
-        super.tittel = tittel;
-        super.beskrivelse = beskrivelse;
-        super.utgivelsesdato = utgivelsesdato;
-
+        this.tittel = tittel;
+        this.beskrivelse = beskrivelse;
+        this.utgivelsesdato = utgivelsesdato;
     }
+
+
 
     public void leggTilEpisode(Episode episode) {
         if (antallSesonger + 1 < episode.getSesongNummer()) {

@@ -7,14 +7,15 @@ public class Episode extends Produksjon{
 
 
 
-    public Episode(int episodeNummer, int sesongNummer, String tittel, int spilletid) {
+    public Episode(String tittel, int spilletid, String beskrivelse, int episodeNummer, int sesongNummer) {
+        super(tittel, spilletid, beskrivelse);
         this.episodeNummer = episodeNummer;
         this.sesongNummer = sesongNummer;
-        super.tittel = tittel;
-        super.spilletid = spilletid;
+
+
 
     }
-
+    //Settere
     public int getEpisodeNummer() {
         return episodeNummer;
     }
@@ -23,9 +24,7 @@ public class Episode extends Produksjon{
         return sesongNummer;
     }
 
-    public int getSpilletid() {
-        return spilletid;
-    }
+    //Gettere
 
     public void setEpisodeNummer(int episodeNummer) {
         this.episodeNummer = episodeNummer;
@@ -35,13 +34,11 @@ public class Episode extends Produksjon{
         this.sesongNummer = sesongNummer;
     }
 
-    public void setSpilletid(int spilletid) {
-        this.spilletid = spilletid;
-    }
+
 
     @Override
     public String toString() {
-        return tittel + " - S" + sesongNummer + "E" + episodeNummer;
+        return getTittel() + " - S" + sesongNummer + "E" + episodeNummer;
     }
 }
 
