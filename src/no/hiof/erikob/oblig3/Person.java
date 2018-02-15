@@ -58,6 +58,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Real name: " + getInfo();
+        return getInfo();
     }
 }

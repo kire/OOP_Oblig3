@@ -5,21 +5,23 @@ import java.util.ArrayList;
 
 public class Produksjon {
     private String tittel;
+    private int spilletid;
     private String beskrivelse;
     private LocalDate utgivelsesdato;
-    private int spilletid;
     private Person regissor;
     private ArrayList<Rolle> roller = new ArrayList<>();
 
 
-    public Produksjon(String tittel, String beskrivelse, LocalDate utgivelsesdato, int spilletid) {
+    public Produksjon(String tittel, int spilletid, String besrkivelse, LocalDate utgivelsesDato) {
         this.tittel = tittel;
-        this.beskrivelse = beskrivelse;
-        this.utgivelsesdato = utgivelsesdato;
         this.spilletid = spilletid;
+        this.beskrivelse = besrkivelse;
+        this.utgivelsesdato = utgivelsesDato;
     }
 
-    public Produksjon(String tittel, int spilletid, String beskrivelse) {
+    public Produksjon(String tittel, int spilletid) {
+        this.tittel = tittel;
+        this.spilletid = spilletid;
     }
 
     //Settere
@@ -73,4 +75,10 @@ public class Produksjon {
     public void leggTilMangeRoller(ArrayList<Rolle> rolle) {
         roller.addAll(rolle);
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
 }

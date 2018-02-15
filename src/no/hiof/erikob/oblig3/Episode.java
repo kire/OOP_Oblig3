@@ -1,20 +1,23 @@
 package no.hiof.erikob.oblig3;
 
+import java.time.LocalDate;
+
 public class Episode extends Produksjon{
     private int episodeNummer;
     private int sesongNummer;
 
-
-
-
-    public Episode(String tittel, int spilletid, String beskrivelse, int episodeNummer, int sesongNummer) {
-        super(tittel, spilletid, beskrivelse);
+    public Episode(int episodeNummer, int sesongNummer, String tittel, int spilletid) {
+        super(tittel, spilletid);
         this.episodeNummer = episodeNummer;
         this.sesongNummer = sesongNummer;
-
-
-
     }
+
+    public Episode(String tittel, int spilletid, LocalDate utgivelsesdato ,String beskrivelse, int episodeNummer, int sesongNummer) {
+        super(tittel, spilletid, beskrivelse, utgivelsesdato);
+        this.episodeNummer = episodeNummer;
+        this.sesongNummer = sesongNummer;
+    }
+
     //Settere
     public int getEpisodeNummer() {
         return episodeNummer;
@@ -38,7 +41,7 @@ public class Episode extends Produksjon{
 
     @Override
     public String toString() {
-        return getTittel() + " - S" + sesongNummer + "E" + episodeNummer;
+        return super.getTittel() + " - S" + sesongNummer + "E" + episodeNummer;
     }
 }
 

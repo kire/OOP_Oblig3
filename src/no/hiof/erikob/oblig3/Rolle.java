@@ -40,7 +40,7 @@ public class Rolle {
 
     @Override
     public String toString(){
-        return getKarFornavn() + " " + getKarEtternavn() + " (" + actor.getInfo() + ")";
+        return actor.getInfo() + " as " + getKarFornavn() + " " + getKarEtternavn();
     }
 
 

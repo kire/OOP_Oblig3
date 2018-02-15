@@ -33,6 +33,13 @@ public class TvSerie {
 
     }
 
+    public ArrayList<Rolle> hentCast(){
+        ArrayList<Rolle> hentRolleListe = new ArrayList<Rolle>();
+        for (Episode episode: episodeListe) {
+            hentRolleListe.addAll(episode.getRoller());
+        }
+        return hentRolleListe;
+    }
 
 
 
